@@ -30,7 +30,7 @@ namespace Lab1_WordLike
             style.IsChecked = false;
         }
 
-        #region Old Code1
+
         #region Old Code2
         //private void ComboBox_SelectionChanged_Font(object sender, SelectionChangedEventArgs e)
         //{
@@ -50,6 +50,7 @@ namespace Lab1_WordLike
         //    }
         //}
         #endregion
+        #region WieghtFont&ColorOfFont
         private void Button_Click_Bold(object sender, RoutedEventArgs e)
         {
             string weightFontCurrent = (textBox.FontWeight).ToString();
@@ -124,7 +125,7 @@ namespace Lab1_WordLike
         }
         #endregion
 
-        #region Menu
+        #region MenuWithExecutedRoutedEvents
         //Команды событий меню
 
         private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
