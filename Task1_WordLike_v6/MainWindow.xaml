@@ -54,25 +54,17 @@
                 <ComboBox x:Name="cb_name"
                           SelectedIndex="0" 
                           Width="200" 
-                          Style="{DynamicResource ComboBoxStyle}">
-                    <ComboBoxItem Tag="Arial">Arial</ComboBoxItem>
-                    <ComboBoxItem Tag="Times New Roman">Times New Roman</ComboBoxItem>
-                    <ComboBoxItem Tag="Verdana">Verdana</ComboBoxItem>
-                    <ComboBoxItem Tag="Corbel">Corbel</ComboBoxItem>
-                </ComboBox>
+                          Style="{DynamicResource ComboBoxStyle}"
+                          ItemsSource="{StaticResource Fonts}"/>
+
 
                 <ComboBox x:Name="cb_size"
                           SelectedIndex="2" 
                           Width="50"                           
-                          Style="{DynamicResource ComboBoxStyle}">
-                    <ComboBoxItem Tag="12">12</ComboBoxItem>
-                    <ComboBoxItem Tag="14">14</ComboBoxItem>
-                    <ComboBoxItem Tag="16">16</ComboBoxItem>
-                    <ComboBoxItem Tag="18">18</ComboBoxItem>
-                    <ComboBoxItem Tag="20">20</ComboBoxItem>
-                    <ComboBoxItem Tag="22">22</ComboBoxItem>
-                    <ComboBoxItem Tag="24">24</ComboBoxItem>
-                </ComboBox>
+                          Style="{DynamicResource ComboBoxStyle}"
+                          ItemsSource="{StaticResource FontSize}"/>
+
+
             </ToolBar>
             <ToolBar Style="{DynamicResource ToolBarStyle}">
                 <Button Click="Button_Click_Bold"
@@ -108,8 +100,8 @@
         </ToolBarTray>
         <TextBox x:Name="textBox" 
                  Grid.Row="2"  Margin="5" Padding="5" 
-                 FontSize="{Binding ElementName=cb_size, Path=SelectedItem.Tag, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-                 FontFamily="{Binding ElementName=cb_name, Path=SelectedItem.Tag, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 FontSize="{Binding ElementName=cb_size, Path=SelectedItem, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                 FontFamily="{Binding ElementName=cb_name, Path=SelectedItem, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                  TextWrapping="Wrap"
                  Style="{DynamicResource TextBoxStyle}"
                  HorizontalScrollBarVisibility="Auto"

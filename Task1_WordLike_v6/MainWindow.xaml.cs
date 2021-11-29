@@ -190,19 +190,19 @@ namespace Lab1_WordLike
 
         private void style_Checked(object sender, RoutedEventArgs e)
         {
-            //Комментарием выделено добавление словаря стилей шрифта и размеров - теперь через Binding.
+            
             bool styleChecks = style.IsChecked.Value;
             Uri uriTheme = new Uri("LightTheme.xaml", UriKind.Relative);
-            //Uri uriFonts = new Uri("Dictionary_Fonts.xaml", UriKind.Relative);
+            Uri uriFonts = new Uri("Dictionary_Fonts.xaml", UriKind.Relative);
             if (styleChecks)
             {
                 uriTheme = new Uri("DarkTheme.xaml", UriKind.Relative);
             }
             ResourceDictionary resourceTheme = Application.LoadComponent(uriTheme) as ResourceDictionary;
-            //ResourceDictionary resourceFonts = Application.LoadComponent(uriFonts) as ResourceDictionary;
+            ResourceDictionary resourceFonts = Application.LoadComponent(uriFonts) as ResourceDictionary;
             Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resourceTheme);
-            //Application.Current.Resources.MergedDictionaries.Add(resourceFonts);
+            Application.Current.Resources.MergedDictionaries.Add(resourceFonts);
         }
     }
 
